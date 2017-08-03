@@ -1,0 +1,86 @@
+/*
+Copyright (C) 2016 gustavo
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+/* 
+    Created on : 11/12/2016, 18:03:55
+    Author     : gustcortarelli
+*/
+div.gc-gantt{
+   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 13px;
+   border-left: 1px solid #C9C9C9;
+   border-right: 1px solid #C9C9C9;
+}
+
+div.gc-row-header{
+   background-color: #c9c9c9;
+}
+
+div.gc-gantt>.gc-row:nth-child(odd) {
+   background-color: #f9f9f9;
+}
+
+.gc-row>.gc-task-day:nth-child(odd) {
+   background-color: #ccc;
+}
+
+div.gc-row:hover{
+   opacity: 0.5;
+}
+
+.gc-task-header-day{
+   font-size: 10px;
+}
+
+.gc-task-day{
+   width: 25px;
+}
+
+div.gc-task-group{
+   font-weight: bold;
+}
+
+div.gc-task-day, 
+div.gc-task-data, 
+div.gc-task-header-day, 
+div.gc-task-resources, 
+div.gc-task-percent,
+div.gc-task-start-date,
+div.gc-task-end-date {
+   border-top: 1px solid #999999;
+   border-bottom: 1px solid #999999;
+   border-left:0;
+   border-right:0;
+}
+
+div.gc-group-bar, div.gc-task-bar{
+   border-radius: 3px;
+}
+
+div.gc-progress-bar{
+   background-color: #1ab394 !important;
+   background-size: 40px 40px !important;
+   background-image: linear-gradient(45deg,
+      rgba(255,255,255,.15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255,255,255,.15) 50%,
+      rgba(255,255,255,.15) 75%,
+      transparent 75%,
+      transparent
+      ) !important;
+   box-shadow: none !important;
+}

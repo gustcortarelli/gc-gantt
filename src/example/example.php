@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Example - GCGantt</title>
+      <link href="../css/gcGantt.css" media="all" rel="stylesheet" type="text/css" />
+      <link href="layout-gcGantt.css" media="all" rel="stylesheet" type="text/css" />
+   </head>
+   <body>
+      <h1>GC GANTT</h1>
+      <div style="overflow: auto;">
+         <div id="gc-gantt"></div>
+      </div>
+      <script src="../js/gcGantt.js" type="text/javascript"></script>
+      <script>
+         var jsonData = [{
+               "id": 1,
+               "description": "group tasks 1",
+               "start": "2016-12-01",
+               "end": "2016-12-15",
+               "calculatePercent": true,
+               "color" : "#004d00",
+               "tasks": [
+                  {
+                     "id": 2,
+                     "description": "group tasks 2",
+                     "start": "2016-12-03",
+                     "end": "2016-12-10",
+                     "calculatePercent": true,
+                     "tasks": [{
+                           "id": 1,
+                           "description": "Task 1",
+                           "start": "2016-12-03",
+                           "end": "2016-12-07",
+                           "resources": ["person A", "person B"],
+                           "percent": 50
+                        },
+                        {
+                           "id": 2,
+                           "description": "Task 2",
+                           "start": "2016-12-06",
+                           "end": "2016-12-10",
+                           "resources": ["person C"],
+                           "percent": 13
+                        }
+                     ],
+                  },
+                  {
+                     "id": 3,
+                     "description": "Task 3",
+                     "start": "2016-12-08",
+                     "end": "2016-12-12",
+                     "percent": 15
+                  }
+               ]
+            },
+            {
+               "id": 4,
+               "description": "Task 4",
+               "start": "2016-12-08",
+               "end": "2016-12-12",
+               "percent": 15,
+               "color": "blue"
+            },
+            {
+               "id": 5,
+               "description": "Task 5",
+               "start": "2016-12-08",
+               "end": "2016-12-12",
+               "percent": 15
+            },
+            {
+               "id": 6,
+               "description": "Task 6",
+               "start": "2016-12-08",
+               "end": "2016-12-12",
+               "percent": 15
+            },
+            {
+               "id": 7,
+               "description": "Task 7",
+               "start": "2016-12-08",
+               "end": "2016-12-12",
+               "percent": 15
+            },
+            {
+               "id": 8,
+               "description": "Task 8",
+               "start": "2016-12-08",
+               "end": "2016-12-08",
+               "percent": 15
+            },
+            {
+               "id": 9,
+               "description": "Task 9",
+               "start": "2016-12-08",
+               "end": "2016-12-12",
+               "percent": 15
+            },
+            {
+               "id": 10,
+               "description": "Task 10",
+               "start": "2016-12-08",
+               "end": "2016-12-12",
+               "percent": 15
+            },
+            {
+               "id": 11,
+               "description": "Task 11",
+               "start": "2016-12-08",
+               "end": "2016-12-12",
+               "percent": 15
+            },
+         ];
+         var gcGantt = new GCGantt('gc-gantt', jsonData, {
+            showResources: true,
+            showStartDate: true,
+            showEndDate: true,
+            "title": {
+               task: "Task name",
+               start: "Start",
+               end: "End",
+               resources: "Resources",
+               percent: "Percent (%)"
+            }
+         });
+         gcGantt.onTaskNameClick = function (id, group) {
+            if (group) {
+               alert("Clicked on group name ID: " + id);
+            } else {
+               alert("Clicked on task name ID: " + id);
+            }
+         }
+         gcGantt.onTaskClick = function (id, group) {
+            if (group) {
+               alert("Clicked on group ID: " + id);
+            } else {
+               alert("Clicked on task ID: " + id);
+            }
+         }
+      </script>
+   </body>
+</html>
