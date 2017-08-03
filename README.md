@@ -48,10 +48,9 @@ var jsonData = [{
   }
 ];
 ```
-finally, make a configuration in order to build a gantt with some tasks:
+finally, make a configuration in order to build a gantt with some tasks, you must parse the element ID where the gantt's chart will be render, the task object and config object:
 ```js
-var _config = {};
-var gcGantt = new GCGantt('gc-gantt', jsonData, _config);
+var gcGantt = new GCGantt('gc-gantt', jsonData, {});
 ```
 ## Events
 This lib is able to control click on events ans, until now, two kinds of functions are available:
