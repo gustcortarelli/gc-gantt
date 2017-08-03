@@ -1,5 +1,6 @@
 # gc-gantt
 A pure JS Gantt chart.
+
 The porpouse of this LIB is create a gannt chart using only Javascript, without any other framework.
 
 ## How to use? (basic usage)
