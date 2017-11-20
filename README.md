@@ -54,7 +54,7 @@ finally, make a configuration in order to build a gantt with some tasks, you mus
 var gcGantt = new GCGantt('gc-gantt', jsonData, {});
 ```
 ## Events
-This lib is able to control click on events ans, until now, two kinds of functions are available:
+This lib is able to control click on events and, until now, two kinds of functions are available:
 
 **On task name click**
 ```js
