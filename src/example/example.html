@@ -13,13 +13,18 @@
       </div>
       <script src="../js/gcGantt.js" type="text/javascript"></script>
       <script>
+         var resources = [
+            {id: 1, resource: "Person A"},
+            {id: 2, resource: "Person B"},
+            {id: 3, resource: "Person C"}
+         ];
          var jsonData = [{
                "id": 1,
                "description": "group tasks 1",
                "start": "2016-12-01",
                "end": "2016-12-15",
                "calculatePercent": true,
-               "color" : "#004d00",
+               "color": "#004d00",
                "tasks": [
                   {
                      "id": 2,
@@ -32,7 +37,7 @@
                            "description": "Task 1",
                            "start": "2016-12-03",
                            "end": "2016-12-07",
-                           "resources": ["person A", "person B"],
+                           "resources": [1, 2],
                            "percent": 50
                         },
                         {
@@ -40,7 +45,7 @@
                            "description": "Task 2",
                            "start": "2016-12-06",
                            "end": "2016-12-10",
-                           "resources": ["person C"],
+                           "resources": [3],
                            "percent": 13
                         }
                      ],
@@ -110,12 +115,13 @@
                "start": "2016-12-08",
                "end": "2016-12-12",
                "percent": 15
-            },
+            }
          ];
-         var gcGantt = new GCGantt('gc-gantt', jsonData, {
+         var gcGantt = new GCGantt('gc-gantt', jsonData, resources, {
             showResources: true,
             showStartDate: true,
             showEndDate: true,
+            showResourceFilter: true,
             "title": {
                task: "Task name",
                start: "Start",
@@ -130,14 +136,14 @@
             } else {
                alert("Clicked on task name ID: " + id);
             }
-         }
+         };
          gcGantt.onTaskClick = function (id, group) {
             if (group) {
                alert("Clicked on group ID: " + id);
             } else {
                alert("Clicked on task ID: " + id);
             }
-         }
+         };
       </script>
    </body>
 </html>
